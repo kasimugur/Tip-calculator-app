@@ -1,0 +1,144 @@
+$FormInput: 24px;
+$StrongCyan: hsl(172, 67%, 45%);
+$VeryDarkCyan: hsl(183, 100%, 15%);
+$DarkGrayishCyan: hsl(186, 14%, 43%);
+$GrayishCyan: hsl(184, 14%, 56%);
+$LightGrayishCyan: hsl(185, 41%, 84%);
+$VeryLightGrayishCyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media screen and (min-width:375px) {
+  #root {
+    // text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $LightGrayishCyan;
+  }
+
+  .header {
+    font-size: 10px;
+  }
+
+  .container {
+    width: 550px;
+    background-color: $White;
+    padding: 20px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  gap: 30px;
+      .row {
+        width: 57%;
+        h4{
+
+        }
+        .input-st {
+          h4 {
+            color: $DarkGrayishCyan;
+            font-size: 15px;
+          }
+
+          input {
+            width: 100%;
+            border: none;
+            background-color:$VeryLightGrayishCyan ;
+            padding: 10px;
+            
+          }
+        }
+
+        .select-tp {
+          margin-top: 15px;
+          h4 {
+            color: $DarkGrayishCyan;
+            font-size: 13px;
+          }
+          .btn {
+            
+            display: grid;
+            grid-template-columns: repeat(3 1fr);
+            gap: 10px;
+            input{
+              width: 30px;
+            }
+            button{
+              width: 30px;
+            }
+          }
+        }
+
+        .people-number {
+          margin-top: 15px;
+          h4 {
+            color: $DarkGrayishCyan;
+            font-size: 12px;
+            // font-size: 10px;
+          }
+
+          input {
+            width: 100%;
+            border: none;
+            background-color:$VeryLightGrayishCyan ;
+            padding: 10px;
+
+          }
+        }
+      }
+
+      .card-item {
+        background-color: $VeryDarkCyan;
+        padding: 10px 10px;
+        border-radius: inherit;
+        width: 60%;
+        .card{
+          // display: flex;
+        }
+      }
+    
+  }
+}
+
+@media screen and (max-width:376px) {
+  #root {}
+
+  .header {}
+
+  .container {
+    .row {
+
+      .input-st {
+        h4 {}
+
+        input {}
+      }
+
+      .select-tp {
+        h4 {}
+
+        .btn {}
+      }
+
+      .people-number {
+        h4 {
+          font-size: 10px;
+        }
+
+        input {}
+      }
+    }
+
+    .card-item {}
+  }
+}
