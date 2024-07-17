@@ -38,75 +38,90 @@ $White: hsl(0, 0%, 100%);
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-  gap: 30px;
-      .row {
-        width: 57%;
-        h4{
+    gap: 30px;
+
+    .row {
+      width: 57%;
+
+      h4 {}
+
+      .input-st {
+        h4 {
+          color: $DarkGrayishCyan;
+          font-size: 15px;
+        }
+
+        input {
+          width: 100%;
+          border: none;
+          background-color: $VeryLightGrayishCyan ;
+          padding: 10px;
 
         }
-        .input-st {
-          h4 {
-            color: $DarkGrayishCyan;
-            font-size: 15px;
-          }
+      }
 
+      .select-tp {
+        margin-top: 15px;
+
+        h4 {
+          color: $DarkGrayishCyan;
+          font-size: 13px;
+        }
+
+        .btn {
+          flex: 3;
+          display: grid;
+          grid-template-columns: 2fr 2fr 2fr;
+          gap: 10px;
+          margin: 10px 0;
+          max-width: 35px;
           input {
-            width: 100%;
+            border-radius: 5px;
+            padding: 10px 12px;
+            background-color: $VeryDarkCyan;
             border: none;
-            background-color:$VeryLightGrayishCyan ;
-            padding: 10px;
-            
+            width: 75px;
           }
-        }
-
-        .select-tp {
-          margin-top: 15px;
-          h4 {
-            color: $DarkGrayishCyan;
-            font-size: 13px;
-          }
-          .btn {
-            
-            display: grid;
-            grid-template-columns: repeat(3 1fr);
-            gap: 10px;
+          
+          button {
+            border: none;
             input{
-              width: 30px;
+              background-color: $VeryLightGrayishCyan;
             }
-            button{
-              width: 30px;
-            }
-          }
-        }
-
-        .people-number {
-          margin-top: 15px;
-          h4 {
-            color: $DarkGrayishCyan;
-            font-size: 12px;
-            // font-size: 10px;
-          }
-
-          input {
-            width: 100%;
-            border: none;
-            background-color:$VeryLightGrayishCyan ;
-            padding: 10px;
-
           }
         }
       }
 
-      .card-item {
-        background-color: $VeryDarkCyan;
-        padding: 10px 10px;
-        border-radius: inherit;
-        width: 60%;
-        .card{
-          // display: flex;
+      .people-number {
+        margin-top: 15px;
+
+        h4 {
+          color: $DarkGrayishCyan;
+          font-size: 12px;
+          // font-size: 10px;
+        }
+
+        input {
+          width: 100%;
+          border: none;
+          background-color: $VeryLightGrayishCyan ;
+          padding: 10px;
+
         }
       }
-    
+    }
+
+    .card-item {
+      background-color: $VeryDarkCyan;
+      padding: 10px 10px;
+      border-radius: inherit;
+      width: 60%;
+
+      .card {
+        // display: flex;
+      }
+    }
+
   }
 }
 

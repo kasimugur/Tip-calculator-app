@@ -49,15 +49,25 @@
     font-size: 13px;
   }
   .container .row .select-tp .btn {
+    flex: 3;
     display: grid;
-    grid-template-columns: repeat(3 1fr);
+    grid-template-columns: 2fr 2fr 2fr;
     gap: 10px;
+    margin: 10px 0;
+    max-width: 35px;
   }
   .container .row .select-tp .btn input {
-    width: 30px;
+    border-radius: 5px;
+    padding: 10px 12px;
+    background-color: hsl(183, 100%, 15%);
+    border: none;
+    width: 75px;
   }
   .container .row .select-tp .btn button {
-    width: 30px;
+    border: none;
+  }
+  .container .row .select-tp .btn button input {
+    background-color: hsl(189, 41%, 97%);
   }
   .container .row .people-number {
     margin-top: 15px;
