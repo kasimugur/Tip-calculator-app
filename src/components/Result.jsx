@@ -20,7 +20,7 @@ export default function Result() {
             <h1>$0.00</h1>
           </div>
         </div>
-        <div className="btn">
+        <div className="btn-res">
           <button>RESET</button>
         </div>
       </div>

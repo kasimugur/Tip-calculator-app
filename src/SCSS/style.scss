@@ -11,11 +11,15 @@ $White: hsl(0, 0%, 100%);
   padding: 0;
   box-sizing: border-box;
   margin: 0;
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
 }
 
 @media screen and (min-width:375px) {
   #root {
-    // text-align: center;
     flex-direction: column;
     height: 100vh;
     max-width: 100%;
@@ -52,11 +56,22 @@ $White: hsl(0, 0%, 100%);
         }
 
         input {
+          cursor: pointer;
+          text-align: end;
           width: 100%;
           border: none;
           background-color: $VeryLightGrayishCyan ;
           padding: 10px;
 
+          &:focus {
+            
+            background-color: $VeryLightGrayishCyan;
+            border-color: $StrongCyan;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid $StrongCyan;
+            font-weight: bold;
+          }
         }
       }
 
@@ -75,18 +90,43 @@ $White: hsl(0, 0%, 100%);
           gap: 10px;
           margin: 10px 0;
           max-width: 35px;
+
           input {
+            cursor: pointer;
+            color: $White;
             border-radius: 5px;
             padding: 10px 12px;
             background-color: $VeryDarkCyan;
             border: none;
             width: 75px;
+
+            &:hover {
+              background-color: $LightGrayishCyan;
+              color: #000;
+              cursor: pointer;
+            }
+
+            &:focus {
+              background-color: $StrongCyan;
+            }
           }
-          
+
           button {
             border: none;
-            input{
+
+            input {
+              text-align: end;
+              color: #000;
               background-color: $VeryLightGrayishCyan;
+
+
+              &:focus {
+                background-color: $VeryLightGrayishCyan;
+                border-color: $StrongCyan;
+                outline: none;
+                border: 2px solid $StrongCyan;
+                font-weight: bold;
+              }
             }
           }
         }
@@ -102,11 +142,19 @@ $White: hsl(0, 0%, 100%);
         }
 
         input {
+          cursor: pointer;
+          text-align: end;
           width: 100%;
           border: none;
           background-color: $VeryLightGrayishCyan ;
           padding: 10px;
-
+          &:focus{
+            font-weight: bold;
+            border-color: $StrongCyan;
+            outline: none;
+            border: 2px solid $StrongCyan;
+            border-radius: 5px;
+          }
         }
       }
     }
@@ -117,8 +165,64 @@ $White: hsl(0, 0%, 100%);
       border-radius: inherit;
       width: 60%;
 
+
+      //  RESULT JSX SCSS
       .card {
-        // display: flex;
+
+        .result-amount {
+          margin: 18px 0;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .result-total {
+          margin: 18px 0;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .result {
+          h4 {
+            font-size: 14px;
+            color: $White;
+          }
+
+          span {
+            font-size: 9px;
+            color: $VeryLightGrayishCyan;
+          }
+        }
+
+        .res {
+          h1 {
+            color: $StrongCyan;
+          }
+        }
+
+        .btn-res {
+
+          margin: 10px 0;
+
+          button {
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 0;
+            width: 100%;
+            font-weight: bold;
+            color: $VeryDarkCyan;
+            background-color: hsla(180, 14%, 43%, 0.508);
+            cursor: pointer;
+
+            &:hover {
+              background-color: $LightGrayishCyan;
+            }
+
+            &:focus {
+              background-color: $StrongCyan;
+            }
+          }
+        }
       }
     }
 
@@ -126,34 +230,213 @@ $White: hsl(0, 0%, 100%);
 }
 
 @media screen and (max-width:376px) {
-  #root {}
+  #root {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: $LightGrayishCyan;
+  }
 
-  .header {}
+  .header {
+    text-align: center;
+    font-size: 10px;
+    margin: 10px 0;
+  }
 
   .container {
+    width: 100%;
+    background-color: $White;
+    padding: 20px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 30px;
+
     .row {
-
+      width: 100%;
+      
       .input-st {
-        h4 {}
+        margin: 0 10px;
+        h4 {
+          color: $DarkGrayishCyan;
+          font-size: 15px;
+        }
 
-        input {}
+        input {
+          cursor: pointer;
+          text-align: end;
+          width: 100%;
+          border: none;
+          background-color: $VeryLightGrayishCyan ;
+          padding: 10px;
+
+          &:focus {
+            
+            background-color: $VeryLightGrayishCyan;
+            border-color: $StrongCyan;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid $StrongCyan;
+            font-weight: bold;
+          }
+        }
       }
 
       .select-tp {
-        h4 {}
+        margin-top: 15px;
 
-        .btn {}
+        h4 {
+          color: $DarkGrayishCyan;
+          font-size: 13px;
+        }
+
+        .btn {
+          flex: 2;
+          display: grid;
+          grid-template-columns: 3fr 3fr ;
+          gap: 10px;
+          margin: 10px 0;
+          width: 100%;
+
+          input {
+            cursor: pointer;
+            color: $White;
+            border-radius: 5px;
+            padding: 10px 12px;
+            background-color: $VeryDarkCyan;
+            border: none;
+            width:100%;
+
+            &:hover {
+              background-color: $LightGrayishCyan;
+              color: #000;
+              cursor: pointer;
+            }
+
+            &:focus {
+              background-color: $StrongCyan;
+            }
+          }
+
+          button {
+            border: none;
+
+            input {
+              width: 100%;
+              text-align: end;
+              color: #000;
+              background-color: $VeryLightGrayishCyan;
+
+
+              &:focus {
+                background-color: $VeryLightGrayishCyan;
+                border-color: $StrongCyan;
+                outline: none;
+                border: 2px solid $StrongCyan;
+                font-weight: bold;
+              }
+            }
+          }
+        }
       }
 
       .people-number {
+        margin-top: 15px;
+
         h4 {
-          font-size: 10px;
+          color: $DarkGrayishCyan;
+          font-size: 12px;
+          // font-size: 10px;
         }
 
-        input {}
+        input {
+          cursor: pointer;
+          text-align: end;
+          width: 100%;
+          border: none;
+          background-color: $VeryLightGrayishCyan ;
+          padding: 10px;
+          &:focus{
+            font-weight: bold;
+            border-color: $StrongCyan;
+            outline: none;
+            border: 2px solid $StrongCyan;
+            border-radius: 5px;
+          }
+        }
       }
     }
 
-    .card-item {}
+    .card-item {
+      background-color: $VeryDarkCyan;
+      padding: 10px 10px;
+      border-radius: inherit;
+      width: 100%;
+
+
+      //  RESULT JSX SCSS
+      .card {
+
+        .result-amount {
+          margin: 20px 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        .result-total {
+          margin: 20px 10px;
+          flex-wrap: wrap;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .result {
+          h4 {
+            font-size: 10px;
+            color: $White;
+          }
+
+          span {
+            font-size: 8px;
+            color: $VeryLightGrayishCyan;
+          }
+        }
+
+        .res {
+          h1 {
+            color: $StrongCyan;
+          }
+        }
+
+        .btn-res {
+
+          margin: 5px 3px;
+
+          button {
+            margin: 5px 3px;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 0;
+            width: 100%;
+            font-weight: bold;
+            color: $VeryDarkCyan;
+            background-color: hsla(180, 14%, 43%, 0.508);
+            cursor: pointer;
+
+            &:hover {
+              background-color: $LightGrayishCyan;
+            }
+
+            &:focus {
+              background-color: $StrongCyan;
+            }
+          }
+        }
+      }
+    }
+
   }
 }

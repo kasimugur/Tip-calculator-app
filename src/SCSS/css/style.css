@@ -3,6 +3,10 @@
   box-sizing: border-box;
   margin: 0;
 }
+* input[type=number]::-webkit-inner-spin-button,
+* input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 
 @media screen and (min-width: 375px) {
   #root {
@@ -36,10 +40,20 @@
     font-size: 15px;
   }
   .container .row .input-st input {
+    cursor: pointer;
+    text-align: end;
     width: 100%;
     border: none;
     background-color: hsl(189, 41%, 97%);
     padding: 10px;
+  }
+  .container .row .input-st input:focus {
+    background-color: hsl(189, 41%, 97%);
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid hsl(172, 67%, 45%);
+    font-weight: bold;
   }
   .container .row .select-tp {
     margin-top: 15px;
@@ -57,17 +71,36 @@
     max-width: 35px;
   }
   .container .row .select-tp .btn input {
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
     border-radius: 5px;
     padding: 10px 12px;
     background-color: hsl(183, 100%, 15%);
     border: none;
     width: 75px;
   }
+  .container .row .select-tp .btn input:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: #000;
+    cursor: pointer;
+  }
+  .container .row .select-tp .btn input:focus {
+    background-color: hsl(172, 67%, 45%);
+  }
   .container .row .select-tp .btn button {
     border: none;
   }
   .container .row .select-tp .btn button input {
+    text-align: end;
+    color: #000;
     background-color: hsl(189, 41%, 97%);
+  }
+  .container .row .select-tp .btn button input:focus {
+    background-color: hsl(189, 41%, 97%);
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    font-weight: bold;
   }
   .container .row .people-number {
     margin-top: 15px;
@@ -77,10 +110,19 @@
     font-size: 12px;
   }
   .container .row .people-number input {
+    cursor: pointer;
+    text-align: end;
     width: 100%;
     border: none;
     background-color: hsl(189, 41%, 97%);
     padding: 10px;
+  }
+  .container .row .people-number input:focus {
+    font-weight: bold;
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    border-radius: 5px;
   }
   .container .card-item {
     background-color: hsl(183, 100%, 15%);
@@ -88,9 +130,214 @@
     border-radius: inherit;
     width: 60%;
   }
+  .container .card-item .card .result-amount {
+    margin: 18px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .card-item .card .result-total {
+    margin: 18px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .card-item .card .result h4 {
+    font-size: 14px;
+    color: hsl(0, 0%, 100%);
+  }
+  .container .card-item .card .result span {
+    font-size: 9px;
+    color: hsl(189, 41%, 97%);
+  }
+  .container .card-item .card .res h1 {
+    color: hsl(172, 67%, 45%);
+  }
+  .container .card-item .card .btn-res {
+    margin: 10px 0;
+  }
+  .container .card-item .card .btn-res button {
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: bold;
+    color: hsl(183, 100%, 15%);
+    background-color: hsla(180, 14%, 43%, 0.508);
+    cursor: pointer;
+  }
+  .container .card-item .card .btn-res button:hover {
+    background-color: hsl(185, 41%, 84%);
+  }
+  .container .card-item .card .btn-res button:focus {
+    background-color: hsl(172, 67%, 45%);
+  }
 }
 @media screen and (max-width: 376px) {
-  .container .row .people-number h4 {
+  #root {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: hsl(185, 41%, 84%);
+  }
+  .header {
+    text-align: center;
     font-size: 10px;
+    margin: 10px 0;
+  }
+  .container {
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 30px;
+  }
+  .container .row {
+    width: 100%;
+  }
+  .container .row .input-st {
+    margin: 0 10px;
+  }
+  .container .row .input-st h4 {
+    color: hsl(186, 14%, 43%);
+    font-size: 15px;
+  }
+  .container .row .input-st input {
+    cursor: pointer;
+    text-align: end;
+    width: 100%;
+    border: none;
+    background-color: hsl(189, 41%, 97%);
+    padding: 10px;
+  }
+  .container .row .input-st input:focus {
+    background-color: hsl(189, 41%, 97%);
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid hsl(172, 67%, 45%);
+    font-weight: bold;
+  }
+  .container .row .select-tp {
+    margin-top: 15px;
+  }
+  .container .row .select-tp h4 {
+    color: hsl(186, 14%, 43%);
+    font-size: 13px;
+  }
+  .container .row .select-tp .btn {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+  }
+  .container .row .select-tp .btn input {
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    padding: 10px 12px;
+    background-color: hsl(183, 100%, 15%);
+    border: none;
+    width: 100%;
+  }
+  .container .row .select-tp .btn input:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: #000;
+    cursor: pointer;
+  }
+  .container .row .select-tp .btn input:focus {
+    background-color: hsl(172, 67%, 45%);
+  }
+  .container .row .select-tp .btn button {
+    border: none;
+  }
+  .container .row .select-tp .btn button input {
+    width: 100%;
+    text-align: end;
+    color: #000;
+    background-color: hsl(189, 41%, 97%);
+  }
+  .container .row .select-tp .btn button input:focus {
+    background-color: hsl(189, 41%, 97%);
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    font-weight: bold;
+  }
+  .container .row .people-number {
+    margin-top: 15px;
+  }
+  .container .row .people-number h4 {
+    color: hsl(186, 14%, 43%);
+    font-size: 12px;
+  }
+  .container .row .people-number input {
+    cursor: pointer;
+    text-align: end;
+    width: 100%;
+    border: none;
+    background-color: hsl(189, 41%, 97%);
+    padding: 10px;
+  }
+  .container .row .people-number input:focus {
+    font-weight: bold;
+    border-color: hsl(172, 67%, 45%);
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    border-radius: 5px;
+  }
+  .container .card-item {
+    background-color: hsl(183, 100%, 15%);
+    padding: 10px 10px;
+    border-radius: inherit;
+    width: 100%;
+  }
+  .container .card-item .card .result-amount {
+    margin: 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container .card-item .card .result-total {
+    margin: 20px 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .card-item .card .result h4 {
+    font-size: 10px;
+    color: hsl(0, 0%, 100%);
+  }
+  .container .card-item .card .result span {
+    font-size: 8px;
+    color: hsl(189, 41%, 97%);
+  }
+  .container .card-item .card .res h1 {
+    color: hsl(172, 67%, 45%);
+  }
+  .container .card-item .card .btn-res {
+    margin: 5px 3px;
+  }
+  .container .card-item .card .btn-res button {
+    margin: 5px 3px;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: bold;
+    color: hsl(183, 100%, 15%);
+    background-color: hsla(180, 14%, 43%, 0.508);
+    cursor: pointer;
+  }
+  .container .card-item .card .btn-res button:hover {
+    background-color: hsl(185, 41%, 84%);
+  }
+  .container .card-item .card .btn-res button:focus {
+    background-color: hsl(172, 67%, 45%);
   }
 }/*# sourceMappingURL=style.css.map */

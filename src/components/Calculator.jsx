@@ -7,7 +7,7 @@ export default function Calculator() {
         <div className="row">
           <div className="input-st">
             <h4>Bill</h4>
-            <input type="number" placeholder="$" />
+            <input type="number" placeholder="0" />
           </div>
           <div className="select-tp">
             <h4>Select Tip %</h4>
