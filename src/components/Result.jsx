@@ -1,4 +1,9 @@
+import { useContext } from "react"
+import CardContext from "../context/CardContext"
+
 export default function Result() {
+  const {result, resultTip} = useContext(CardContext)
+
   return (
     <>
       <div className="card">
@@ -8,7 +13,7 @@ export default function Result() {
             <span>/ person</span>
           </div>
           <div className="res">
-            <h1>$0.00</h1>
+            <h1>${resultTip}</h1>
           </div>
         </div>
         <div className="result-total">
@@ -17,7 +22,7 @@ export default function Result() {
             <span>/ person</span>
           </div>
           <div className="res">
-            <h1>$0.00</h1>
+            <h1>${result} </h1>
           </div>
         </div>
         <div className="btn-res">
