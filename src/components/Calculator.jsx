@@ -4,16 +4,17 @@ import { useEffect } from "react";
 import CardContext from "../context/CardContext";
 
 export default function Calculator() {
-  const [bill, setBill] = useState(100)
+  const [bill, setBill] = useState('0')
   const [selectTip, setSelectTip] = useState('')
   const [custom, setCustom] = useState('')
-  const [people, setPeople] = useState(3)
+  const [people, setPeople] = useState('')
   const [resultTip, setResultTip] = useState('')
   const [result, setResult] = useState('')
 
   console.log(bill, "fatura")
-  console.log(selectTip, "yüüzdesi")
-  console.log(custom)
+  console.log(selectTip, "select tip")
+  console.log(custom, "custom")
+
   console.log(people, "insan sayısı")
   console.log(resultTip, "bahşiş miktarı")
   console.log(result, "toplam hesap")
@@ -21,28 +22,38 @@ export default function Calculator() {
   function yuzdeAl(sayi, yuzde) {
     return (sayi * yuzde) / 100;
   }
+  function toplam(yuzde, sayi) {
+    return (yuzde * sayi);
+  }
 
   const tipCalculator = () => {
-    if (custom === "") {
+    if (custom === '') {
       let seletUpdate = selectTip.replace(/%/g, "")
-      let percentage = yuzdeAl(bill, seletUpdate)
+      let numberToString = Number(bill)
+      let percentage = yuzdeAl(numberToString, Number(seletUpdate))
       setResultTip(percentage)
-      let total = (percentage * people) + bill
+      let total = toplam(resultTip, people) + numberToString
       setResult(total)
     } else {
-      let percentage2 = yuzdeAl(bill, custom)
-      setResultTip(percentage2)
-      let total2 = (percentage2 * people) + bill
-      setResult(total2)
+      let numberToString = Number(bill)
+      let percentage = yuzdeAl(numberToString, custom)
+      setResultTip(percentage)
+      let total = toplam(resultTip, people) + numberToString
+      setResult(total)
     }
   }
+
+
+  useEffect(() => {setCustom('')}, [selectTip])
+  useEffect(() => {setSelectTip('')}, [custom])
+
   useEffect(() => {
     if (bill === '' && people === 0 && (selectTip === "" || custom === '')) {
       console.log(" herhangi biri false")
     } else {
       tipCalculator()
     }
-  }, [selectTip, people, bill])
+  }, [bill || people || selectTip || custom])
 
   const data = {
     result,
