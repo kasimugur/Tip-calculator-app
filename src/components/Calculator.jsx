@@ -43,9 +43,17 @@ export default function Calculator() {
     }
   }
 
-
-  useEffect(() => {setCustom('')}, [selectTip])
-  useEffect(() => {setSelectTip('')}, [custom])
+ const reset = () => {
+  return (
+    setBill('0'),
+    setCustom(''),
+    setPeople(''),
+    setSelectTip('')
+  )
+  
+ }
+  useEffect(() => { return setCustom('') }, [selectTip])
+  useEffect(() => { return setSelectTip('') }, [custom])
 
   useEffect(() => {
     if (bill === '' && people === 0 && (selectTip === "" || custom === '')) {
@@ -53,9 +61,10 @@ export default function Calculator() {
     } else {
       tipCalculator()
     }
-  }, [bill || people || selectTip || custom])
+  }, [bill,selectTip,custom,people])
 
   const data = {
+    reset,
     result,
     resultTip
   }

@@ -2,7 +2,7 @@ import { useContext } from "react"
 import CardContext from "../context/CardContext"
 
 export default function Result() {
-  const {result, resultTip} = useContext(CardContext)
+  const {result, resultTip, reset} = useContext(CardContext)
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function Result() {
           </div>
         </div>
         <div className="btn-res">
-          <button>RESET</button>
+          <button onClick={() => reset()}>RESET</button>
         </div>
       </div>
     </>
